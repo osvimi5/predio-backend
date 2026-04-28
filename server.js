@@ -1,5 +1,9 @@
 const express = require("express");
 const cors = require("cors");
+const app = express();
+app.use(cors());
+app.use(express.json());
+
 app.get("/", (req, res) => {
   res.send("API funcionando 🚀");
 });
@@ -15,13 +19,12 @@ const movimientosRoutes = require("./routes/movimientos");
 const authRoutes = require("./routes/auth");
 const dashboardRoutes = require("./routes/dashboard");
 const turnosRoutes = require("./routes/turnos")
-const app = express();
+
 app.get("/test", (req, res) => {
   res.json({ ok: true });
 });
 
-app.use(cors());
-app.use(express.json());
+
 app.use("/uploads", express.static("uploads"));
 /* ===========================
    RUTAS API
