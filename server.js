@@ -1,5 +1,8 @@
 const express = require("express");
 const cors = require("cors");
+app.get("/", (req, res) => {
+  res.send("API funcionando 🚀");
+});
 const usuariosRoutes = require("./routes/usuarios");
 
 //console.log("UsuariosRoutes cargado:", typeof usuariosRoutes);
